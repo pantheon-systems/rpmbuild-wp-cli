@@ -1,7 +1,4 @@
-general:
-  artifacts:
-    - "pkg"
-
+---
 dependencies:
   pre:
     - make deps
