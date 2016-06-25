@@ -6,6 +6,9 @@ all: rpm
 deps:
 	gem install fpm
 
+deps-macos:
+	brew install rpm
+
 deps-circle:
 	sudo apt-get install rpm
 	gem install package_cloud
