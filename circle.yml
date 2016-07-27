@@ -6,17 +6,10 @@ dependencies:
 
 test:
   override:
-    - make all
+    - make all test
 
 deployment:
-  dev:
-    branch:
-      - stage
-      - yolo
-      - dev
-    commands:
-      - bash scripts/push_packagecloud.sh internal-staging
   prod:
     branch: master
     commands:
-      - bash scripts/push_packagecloud.sh internal
+      - bash scripts/push_packagecloud.sh internal-staging

@@ -16,4 +16,10 @@ deps-circle:
 rpm:
 	bash scripts/build-rpm.sh
 
-.PHONY: all
+test:
+	bash tests/confirm-rpm.sh
+
+clean:
+	rm -rf build pkgs
+
+.PHONY: all clean test rpm deps
