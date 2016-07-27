@@ -15,5 +15,5 @@ if [ -z "$1" ] ; then
 fi
 
 for i in ${repo_versions[@]} ; do
-  echo package_cloud push "pantheon/$1/fedora/$i" ./*.rpm
+  echo package_cloud push "pantheon/$1/fedora/$i" pkgs/*.rpm
 done
