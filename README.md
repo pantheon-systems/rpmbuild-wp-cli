@@ -22,11 +22,17 @@ This rpm installs:
 
 ## Releasing to Package Cloud
 
-Any time a commit is merged on the master branch, then the wp-cli RPM is built and pushed up to Package Cloud in pantheon/internal-staging/fedora/#.
+CircleCI has automatic deployment of RPMs to Package Cloud configured.
+
+When tests pass for a PR:  publish to pantheon/internal-staging/fedora/#.
+
+When tests pass on master: publish to pantheon/internal/fedora/#.
 
 In the example, # is the fedora build number (19, 20, 22). Note that wp-cli is only installed on app servers, and there are no app servers on anything prior to f22; therefore, at the moment, we are only building for f22.
 
-To release a new version of wp-cli, simply update the VERSION.txt file and commit. Run `make` to build locally. Push to master to have an official RPM built and pushed to Package Cloud staging via Circle CI.
+To release a new version of wp-cli, simply update the VERSION.txt file and commit. Run `make` to build locally. Create a PR to have an RPM built and pushed to Package Cloud internal-staging via Circle CI. Merge the PR to have the RPM pushed to Package Cloud internal.
+
+Note: The rpm on internal-staging and internal will not be exactly the same; they will differ in their build timestamp. 
 
 ## Provisioning wp-cli on Pantheon
 

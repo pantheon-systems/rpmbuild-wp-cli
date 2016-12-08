@@ -12,4 +12,8 @@ deployment:
   prod:
     branch: master
     commands:
+      - bash scripts/push_packagecloud.sh internal
+  development:
+    branch: /^(?!master$).*$/  # not the master branch
+    commands:
       - bash scripts/push_packagecloud.sh internal-staging
