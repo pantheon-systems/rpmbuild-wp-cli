@@ -1,8 +1,8 @@
 #!/bin/bash
 # confirm-rpm.sh
 
-expectedName=wp-cli0
-expectedContents=/opt/pantheon/wp-cli0/wp-cli.phar
+expectedName=wp-cli1
+expectedContents=/opt/pantheon/wp-cli1/wp-cli.phar
 pkgDir="pkgs"
 if [ ! -d "$pkgDir" ]
 then

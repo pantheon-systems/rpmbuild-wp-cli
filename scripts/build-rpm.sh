@@ -10,7 +10,7 @@ CIRCLE_BUILD_NUM=${CIRCLE_BUILD_NUM:-0}
 # epoch to use for -revision
 epoch=$(date +%s)
 
-shortname="wp-cli0"
+shortname="wp-cli1"
 name="$shortname"
 
 version=$(cat $bin/../VERSION.txt)
