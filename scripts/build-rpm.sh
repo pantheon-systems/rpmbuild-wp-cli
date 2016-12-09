@@ -10,12 +10,13 @@ CIRCLE_BUILD_NUM=${CIRCLE_BUILD_NUM:-0}
 # epoch to use for -revision
 epoch=$(date +%s)
 
-shortname="wp-cli0"
+shortname="wp-cli1"
 name="$shortname"
 
 version=$(cat $bin/../VERSION.txt)
 iteration="$(date +%Y%m%d%H%M)"
 arch='noarch'
+os='linux'
 url="https://github.com/pantheon-systems/${shortname}"
 vendor='Pantheon'
 description='wp-cli: Pantheon rpm containing commandline tool for WordPress'
@@ -37,6 +38,7 @@ fpm -s dir -t rpm  \
     --version "${version}" \
     --iteration "${iteration}" \
     --epoch "${epoch}" \
+    --rpm-os "${os}" \
     --architecture "${arch}" \
     --url "${url}" \
     --vendor "${vendor}" \
