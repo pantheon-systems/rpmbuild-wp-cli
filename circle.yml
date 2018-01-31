@@ -1,4 +1,8 @@
 ---
+machine:
+  ruby:
+    version: 2.2.3
+
 dependencies:
   pre:
     - make deps
