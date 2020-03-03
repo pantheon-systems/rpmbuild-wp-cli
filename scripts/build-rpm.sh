@@ -10,7 +10,7 @@ CIRCLE_BUILD_NUM=${CIRCLE_BUILD_NUM:-0}
 # epoch to use for -revision
 epoch=$(date +%s)
 
-shortname="wp-cli1"
+shortname="wp-cli2"
 name="$shortname"
 
 version=$(cat $bin/../VERSION.txt)
@@ -25,7 +25,7 @@ install_prefix="/opt/pantheon/$shortname"
 download_dir="$bin/../build"
 target_dir="$bin/../pkgs"
 
-# We wastefully re-download the same file for each version of Fedora. Oh well.
+# There is only one version of Fedora in Heirloom.
 rm -rf $download_dir
 mkdir -p $download_dir
 curl -L -f https://github.com/wp-cli/wp-cli/releases/download/v${version}/wp-cli-${version}.phar --output $download_dir/wp-cli.phar
