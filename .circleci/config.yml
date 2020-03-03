@@ -15,25 +15,11 @@ defaults:
 
 version: 2
 jobs:
-  # Download the things that go in the RPM
-  fetch:
-    <<: *php_container
-    steps:
-      - checkout
-      - run: echo 'export PATH=/rpmbuild/bin:$PATH' >> $BASH_ENV
-      - run: echo 'Fetch step not needed'
-      - persist_to_workspace:
-          root: /rpmbuild
-          paths:
-            - builds
-
   # Build and test the RPM
   build:
     <<: *rpmbuild_container
     steps:
       - checkout
-      - attach_workspace:
-          at: /rpmbuild
       - run: echo 'export PATH=/rpmbuild/bin:$PATH' >> $BASH_ENV
       - run:
           name: Build PHP RPMs
